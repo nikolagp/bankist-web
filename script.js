@@ -6,6 +6,9 @@ const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
 const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
+const section2 = document.querySelector("#section--2");
+const section3 = document.querySelector("#section--3");
+const navLink = document.querySelectorAll(".nav__link");
 
 ///////////////////////////////////////
 // Modal window
@@ -32,11 +35,18 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-// Scrolling
+///////////////////////////////////////
+// Scrolling To Button
 btnScrollTo.addEventListener("click", function (e) {
-  const s1coords = section1.getBoundingClientRect();
-  window.scrollTo(
-    s1coords.left + window.pageXOffset,
-    s1coords.top + window.pageYOffset
-  );
+  section1.scrollIntoView({ behavior: "smooth" });
+});
+
+///////////////////////////////////////
+// Page Navigation
+navLink.forEach(function (el) {
+  el.addEventListener("click", function (e) {
+    e.preventDefault();
+    const id = this.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  });
 });
