@@ -9,6 +9,7 @@ const section1 = document.querySelector("#section--1");
 const section2 = document.querySelector("#section--2");
 const section3 = document.querySelector("#section--3");
 const navLink = document.querySelectorAll(".nav__link");
+const navLinks = document.querySelector(".nav__links");
 
 ///////////////////////////////////////
 // Modal window
@@ -43,10 +44,21 @@ btnScrollTo.addEventListener("click", function (e) {
 
 ///////////////////////////////////////
 // Page Navigation
-navLink.forEach(function (el) {
-  el.addEventListener("click", function (e) {
-    e.preventDefault();
-    const id = this.getAttribute("href");
+
+// With forEach
+// navLink.forEach(function (el) {
+//   el.addEventListener("click", function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute("href");
+//     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+//   });
+// });
+
+// With Event Delegation
+navLinks.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
-  });
+  }
 });
