@@ -14,6 +14,14 @@
   --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
 }
 
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-bg: #181818;
+    --body-color: #e4e6eb;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,9 +36,11 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  color: #444;
+  /* color: #444; */
   line-height: 1.9;
-  background-color: #f3f3f3;
+  /* background-color: #f3f3f3; */
+  background: var(--body-bg);
+  color: var(--body-color);
 }
 
 /* GENERAL ELEMENTS */
@@ -224,7 +234,7 @@ h4 {
   width: 100%;
   z-index: -1;
   opacity: 0.7;
-  transform: scale(1.07, 1.05) skewX(-15deg);
+  transform: scale(1, 0.7) skewX(-30deg);
   background-image: var(--gradient-primary);
 }
 

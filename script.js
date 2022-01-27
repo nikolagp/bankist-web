@@ -10,6 +10,9 @@ const section2 = document.querySelector("#section--2");
 const section3 = document.querySelector("#section--3");
 const navLink = document.querySelectorAll(".nav__link");
 const navLinks = document.querySelector(".nav__links");
+const tabs = document.querySelectorAll(".operations__tab");
+const tabsContainer = document.querySelector(".operations__tab-container");
+const tabsContent = document.querySelectorAll(".operations__content");
 
 ///////////////////////////////////////
 // Modal window
