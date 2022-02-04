@@ -17,7 +17,8 @@
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --body-bg: #181818;
+    --body-bg: rgba(24, 24, 24, 1);
+    --body-bg-op: rgba(24, 24, 24, 0.8);
     --body-color: #e4e6eb;
   }
 }
@@ -53,7 +54,7 @@ body {
 
 .section--hidden {
   opacity: 0;
-  transform: translateY(8rem);
+  transform: translateY(10rem);
 }
 
 .section__title {
@@ -137,7 +138,7 @@ img {
 /* nav and stickly class at the same time */
 .nav.sticky {
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: var(--body-bg-op);
 }
 
 .nav__logo {
